@@ -1,0 +1,7 @@
+*.zip
+lib/*
+*.iml
+out/*
+web/WEB-INF/lib/*
+.idea/
+
