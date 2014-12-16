@@ -16,10 +16,6 @@
         <servlet-class>SendEmailController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>LogoutController</servlet-name>
-        <servlet-class>LogoutController</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>SearchContactController</servlet-name>
         <servlet-class>SearchContactController</servlet-class>
     </servlet>
@@ -38,10 +34,6 @@
     <servlet-mapping>
         <servlet-name>SendEmailController</servlet-name>
         <url-pattern>/SendEmailController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>LogoutController</servlet-name>
-        <url-pattern>/LogoutController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SearchContactController</servlet-name>

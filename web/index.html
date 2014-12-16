@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
     <title>Send an E-Mail</title>
 </head>
 
@@ -9,13 +10,12 @@
 
 <article class="login-container">
     <section class="login">
-        <h1>Log into gMail</h1>
+        <h1>Log into GMail</h1>
 
         <p>Input the required fields below to login.</p>
 
         <form action="LoginController" method="post">
-            <div>
-                <table>
+                <table class="form-table">
                     <tr>
                         <td>
                             <b>GMail Username: </b>
@@ -34,14 +34,13 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="submit" value="Submit">
                         </td>
                         <td>
+                            <input type="submit" value="Submit">
                             <button type="reset" value="Reset">Reset</button>
                         </td>
                     </tr>
                 </table>
-            </div>
         </form>
     </section>
 </article>
