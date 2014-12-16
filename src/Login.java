@@ -3,6 +3,7 @@ import javax.mail.Session;
 import javax.mail.Store;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,9 +13,11 @@ import java.util.Properties;
 /**
  * Created by chris on 08/12/14.
  */
-public class LoginController extends HttpServlet {
 
-    public LoginController() {
+@WebServlet("/login")
+public class Login extends HttpServlet {
+
+    public Login() {
         super();
     }
 
@@ -41,7 +44,7 @@ public class LoginController extends HttpServlet {
 
             request.getSession().setAttribute("session", session);
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher("email.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("email.html");
             dispatcher.forward(request, response);
 
         } catch (MessagingException e) {

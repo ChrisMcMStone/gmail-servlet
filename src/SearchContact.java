@@ -1,13 +1,12 @@
 import javax.mail.Session;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
@@ -17,36 +16,29 @@ import java.sql.SQLException;
 /**
  * Servlet for searching for contacts
  */
-public class SearchContactController extends HttpServlet {
+@WebServlet("/searchcontact")
+public class SearchContact extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //Checks whether session has timed out
         if (System.currentTimeMillis() > (request.getSession().getLastAccessedTime() + 300000)) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("Error");    //New Request Dispatcher
             request.setAttribute("error", "Login session timed out, please click retry to log back in");
-            request.setAttribute("previous", "index.jsp");
+            request.setAttribute("previous", "index.html");
             dispatcher.forward(request, response);    //Forwards to the page
         } else {
             HttpSession httpSession = request.getSession();
             Session session = (Session) httpSession.getAttribute("session");
             String user = session.getProperties().getProperty("mail.user");
-            String searchType;
-            String searchQueryName;
-            if ("forename".equals(request.getParameter("searchtype"))) {
-                searchType = "forename";
-                searchQueryName = request.getParameter("forename");
-
-            } else {
-                searchType = "familyname";
-                searchQueryName = request.getParameter("surname");
-            }
+            String searchQueryForeName = request.getParameter("forename");
+            String searchQuerySurName = request.getParameter("surname");
 
             Model m = new Model(user);
 
             try {
-                String resultTable = m.search(searchQueryName, searchType, user);
+                String resultTable = m.search(searchQueryForeName, searchQuerySurName, user);
                 httpSession.setAttribute("results", resultTable);
-                httpSession.setAttribute("succeess", "");
+                httpSession.setAttribute("success", "");
                 request.getRequestDispatcher("contact.jsp").forward(request, response);
             } catch (SQLException e) {
                 RequestDispatcher dispatcher = request.getRequestDispatcher("Error"); //New Request Dispatcher

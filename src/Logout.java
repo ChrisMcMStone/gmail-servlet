@@ -8,16 +8,15 @@ import java.io.IOException;
 /**
  * Created by chris on 09/12/14.
  */
-@WebServlet(name="logout",
-            urlPatterns = "/logout")
-public class LogoutController extends HttpServlet {
+@WebServlet("/logout")
+public class Logout extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       try {
-           request.getSession().invalidate();
-       } catch (IllegalStateException e) {}
-        finally {
-           response.sendRedirect("index.html");
-       }
+        try {
+            request.getSession().invalidate();
+        } catch (IllegalStateException e) {
+        } finally {
+            response.sendRedirect("index.html");
+        }
 
 
     }

@@ -8,41 +8,39 @@
 
 <body>
 
-<article class="login-container">
-    <section class="login">
-        <h1>Log into GMail</h1>
+<section class="main">
+    <h1>Log into GMail</h1>
 
-        <p>Input the required fields below to login.</p>
+    <p>Input the required fields below to login.</p>
 
-        <form action="LoginController" method="post">
-                <table class="form-table">
-                    <tr>
-                        <td>
-                            <b>GMail Username: </b>
-                        </td>
-                        <td>
-                            <input id="subject" name="username" type="email" placeholder="example@gmail.com">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <b>Password: </b>
-                        </td>
-                        <td>
-                            <input id="password" name="password" type="password" placeholder="password">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                        </td>
-                        <td>
-                            <input type="submit" value="Submit">
-                            <button type="reset" value="Reset">Reset</button>
-                        </td>
-                    </tr>
-                </table>
-        </form>
-    </section>
-</article>
+    <form action="login" method="post">
+        <table class="form-table">
+            <tr>
+                <td>
+                    <b>GMail Username: </b>
+                </td>
+                <td>
+                    <input id="subject" name="username" type="email" placeholder="example@gmail.com">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Password: </b>
+                </td>
+                <td>
+                    <input id="password" name="password" type="password" placeholder="password">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <input type="submit" value="Submit">
+                    <button type="reset" value="Reset">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</section>
 </body>
 </html>

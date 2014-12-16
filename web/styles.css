@@ -1,16 +1,101 @@
 body {
     background: black;
     font-family: "Lucida Console", Monaco, monospace;
+    text-align: center;
+    margin: 0px auto;
 }
 
-.login-container .login {
+.main {
     text-align: center;
     color: cadetblue;
+    display: inline-block;
+}
+
+.main h3 {
+    text-align: left;
 }
 
 .form-table {
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    text-align: right;
+}
+
+.input {
+    width:90%;
+}
+
+.logout-container {
+    position: absolute;
+    right: 0px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#back {
+    position: absolute;
+    left: 0px;
+    font-size: 13pt;
+    color: cadetblue;
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#find {
+    background:url(http://s21.postimg.org/t3qkwqsar/searchcontact.png);
+    background-repeat: no-repeat;
+    border: 0;
+    cursor: pointer;
+    cursor: hand;
+}
+
+#addcontact {
+    background:url(http://s21.postimg.org/8v37b0szn/addcontact.png);
+    background-repeat: no-repeat;
+    border: 0;
+    cursor: pointer;
+    cursor: hand;
+}
+
+#logout {
+    background:none!important;
+    border:none;
+    padding:0!important;
+    color:cadetblue;
+    text-decoration:underline;
+    cursor:pointer;
+    font-size: 12pt;
+}
+
+#success {
+    color: seagreen;
+}
+
+.result-table{
+    position: relative;
+    width: 100%;;
+    margin-left: auto;
+    margin-right: auto;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+}
+.result-table th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: cadetblue;
+}
+
+.result-table td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
 }
 

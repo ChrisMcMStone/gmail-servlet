@@ -5,9 +5,9 @@
 </head>
 <body>
 <center>
-<b>Message sent successfully!</b>
-<br>
-<a href="email.jsp">Click here to send another email.</a>
+    <b>Message sent successfully!</b>
+    <br>
+    <a href="email.html">Click here to send another email.</a>
 </center>
 </body>
 </html>

@@ -6,8 +6,9 @@
     <link rel="stylesheet" type="text/css" href="styles.css"/>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript">
-    $( ".reset" ).click(function() {
-    document.getElementByClassName("result-table").remove();
+      $(document).ready( function() {
+        $('#success').delay(1000).fadeOut();
+      });
     </script>
 </head>
 <body>
@@ -18,18 +19,16 @@
     </form>
 </div>
 <section class="main">
-    <h1>Search for a contact</h1>
-
-    <p>Enter a forename and/or surname and click search!</p>
-
-    <form action="searchcontact" method="post">
+    <h1>Add a contact</h1>
+    <p>Enter a forename, surname and email and click add!</p>
+    <form action="addcontact" method="post">
         <table class="form-table">
             <tr>
                 <td>
                     <b>Forename: </b>
                 </td>
                 <td>
-                    <input id="name" name="forename" type="text" placeholder="...">
+                    <input id="name" name="firstname" type="text" placeholder="...">
                 </td>
             </tr>
             <tr>
@@ -37,19 +36,27 @@
                     <b>Surname: </b>
                 </td>
                 <td>
-                    <input id="surname" name="surname" type="text" placeholder="...">
+                    <input id="surname" name="secondname" type="text" placeholder="...">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Email Address: </b>
+                </td>
+                <td>
+                    <input id="email" name="email" type="email" placeholder="...">
                 </td>
             </tr>
             <tr>
                 <td></td>
                 <td>
                     <input type="submit" value="Submit">
-                    <button class="reset" type="reset" value="Reset">Reset</button>
+                    <button type="reset" value="Reset">Reset</button>
                 </td>
             </tr>
         </table>
     </form>
-    <%=request.getSession().getAttribute("results")%>
+    <%=request.getSession().getAttribute("success")%>
 </section>
 </body>
 </html>
