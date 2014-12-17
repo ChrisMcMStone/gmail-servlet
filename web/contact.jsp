@@ -6,12 +6,10 @@
     <link rel="stylesheet" type="text/css" href="styles.css"/>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript">
-    $( ".reset" ).click(function() {
-    document.getElementByClassName("result-table").remove();
     </script>
 </head>
 <body>
-<a id="back" href="email.html">Back</a>
+<a id="back" href="email.jsp">Back</a>
 <div class="logout-container">
     <form action="logout" method="post">
         <input id="logout" type="submit" value="Log Out"/>

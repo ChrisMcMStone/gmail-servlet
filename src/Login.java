@@ -44,7 +44,7 @@ public class Login extends HttpServlet {
 
             request.getSession().setAttribute("session", session);
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher("email.html");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("email.jsp");
             dispatcher.forward(request, response);
 
         } catch (MessagingException e) {

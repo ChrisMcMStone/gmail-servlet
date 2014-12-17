@@ -1,3 +1,4 @@
+import javax.servlet.http.HttpServletRequest;
 import java.sql.*;
 
 /**
@@ -43,7 +44,7 @@ public class Model {
 
     }
 
-    public String search(String forename, String surname, String contactemail) throws SQLException {
+    public String search(String forename, String surname, String contactemail, HttpServletRequest request) throws SQLException {
 
         String query;
         if (forename.isEmpty() && surname.isEmpty()) {
@@ -56,9 +57,8 @@ public class Model {
             query = "forename LIKE '%" + forename + "' and familyname LIKE '%" + surname + "' and";
         }
 
-        PreparedStatement ps = conn.prepareStatement("SELECT * FROM contactinfo WHERE ? contactemailaddress = ?");
-        ps.setString(1, query);
-        ps.setString(2, contactemail);
+        PreparedStatement ps = conn.prepareStatement("SELECT * FROM contactinfo WHERE " + query + " contactemailaddress = ?");
+        ps.setString(1, contactemail);
         ResultSet rs = ps.executeQuery();
         StringBuilder result = new StringBuilder("<h3>Search results...</h3><table class=\"result-table\">" +
                 "<tr>" +
@@ -66,7 +66,7 @@ public class Model {
                 "</tr>");
         while (rs.next())
         {
-            result.append("<tr><td>");
+            result.append("<tr onclick=\"sendEmail(\"" + rs.getString(4) +"\")\"><td>");
             result.append(rs.getString(2));
             result.append("</td><td>" + rs.getString(3));
             result.append("</td><td>" + rs.getString(4) + "</td></tr>");

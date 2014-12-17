@@ -52,7 +52,7 @@ public class SendEmail extends HttpServlet {
 
                     tr.sendMessage(message, message.getAllRecipients());    //Sends the message
 
-                    response.sendRedirect("sent.jsp");
+                    response.sendRedirect("sent.html");
                 }
 
             } catch (Exception e) {
@@ -60,7 +60,7 @@ public class SendEmail extends HttpServlet {
                 RequestDispatcher dispatcher = request.getRequestDispatcher("Error");    //New Request Dispatcher
 
                 request.setAttribute("error", e.getMessage());
-                request.setAttribute("previous", "email.html");
+                request.setAttribute("previous", "email.jsp");
 
                 dispatcher.forward(request, response);    //Forwards to the page
             }

@@ -99,3 +99,7 @@ body {
     background-color: #ffffff;
 }
 
+#error {
+    color: firebrick;
+    text-align: center;
+}

@@ -36,7 +36,7 @@ public class SearchContact extends HttpServlet {
             Model m = new Model(user);
 
             try {
-                String resultTable = m.search(searchQueryForeName, searchQuerySurName, user);
+                String resultTable = m.search(searchQueryForeName, searchQuerySurName, user, request);
                 httpSession.setAttribute("results", resultTable);
                 httpSession.setAttribute("success", "");
                 request.getRequestDispatcher("contact.jsp").forward(request, response);

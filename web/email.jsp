@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +25,7 @@
                     <b>To: </b>
                 </td>
                 <td>
-                    <input class="input" name="recipient" type="email" placeholder="example@gmail.com">
+                    <input value="<%=request.getAttribute("recipient")%>" class="input" name="recipient" type="email" placeholder="example@gmail.com">
                 </td>
                 <td>
                     <input id="find" name="search" type="submit" value="  ">

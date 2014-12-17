@@ -19,28 +19,25 @@ public class Error extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        PrintWriter out = response.getWriter();    //Gets the PrintWriter
+        PrintWriter out = response.getWriter();
         String back = (String) request.getAttribute("previous");
         out.println(
-                "<!DOCTYPE html>" +
-                        "<html>" +
-                        "<head lang=\"en\">" +
-                        "<meta charset=\"UTF-8\">" +
-                        "<title>Error Occured</title>" +
-                        "</head>" +
-                        "<body>" +
-                        "<center>" +
-                        "<h1>Error Occurred!</h1>" +
-                        "<div>" +
-                        "<br>" +
-                        "Error: " + request.getAttribute("error") + "<br>" + "<br>" + "<br>" +//Gets the error message
-                        "</div>" +
-                        "<div class='error-actions'>" +
-                        "<a href='" + back + "'>Retry</a>" +
-                        "</div>" +
-                        "</center>" +
-                        "</body>" +
-                        "</html>"
+        "<!DOCTYPE html>" +
+        "<html>" +
+        "<head>" +
+        "<meta charset=\"utf-8\">" +
+        "<link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\"/>" +
+        "<title>Error</title>" +
+        "</head>" +
+        "<body>" +
+        "<section id=\"error\">" +
+        "<h1>Error has occurred</h1>" +
+        "<p>Click retry to go back and try again.</p>" +
+        "<p>Error: " + request.getAttribute("error") + "</p>" +
+        "<a href=" + request.getAttribute("previous") + ">Retry</a>" +
+        "</section>" +
+        "</body>" +
+        "</html>"
         );
     }
 }
