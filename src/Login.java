@@ -50,7 +50,7 @@ public class Login extends HttpServlet {
         } catch (MessagingException e) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("Error"); //New Request Dispatcher
             request.setAttribute("error", e.getMessage());
-            request.setAttribute("previous", request.getServletPath());
+            request.setAttribute("previous", "index.html");
             dispatcher.forward(request, response);
         }
     }

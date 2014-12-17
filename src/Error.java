@@ -11,9 +11,7 @@ public class Error extends HttpServlet {
      * Calls doPost
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         doPost(request, response);
-
     }
 
     /**
@@ -21,20 +19,8 @@ public class Error extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        if (System.currentTimeMillis() > (request.getSession().getLastAccessedTime() + 300000)) {
-            request.setAttribute("error", "Login session timed out, please click retry to log back in");
-            request.setAttribute("previous", "index.html");
-        }
         PrintWriter out = response.getWriter();    //Gets the PrintWriter
-        String back;
-        String previous = (String) request.getAttribute("previous");
-        if (previous.equals("/LoginController") || previous.equals("index.html")) {
-            back = "index.html";
-        } else if (previous.equals("searchcontact")) {
-            back = "contact.jsp";
-        } else {
-            back = "email.html";
-        }
+        String back = (String) request.getAttribute("previous");
         out.println(
                 "<!DOCTYPE html>" +
                         "<html>" +
@@ -56,7 +42,5 @@ public class Error extends HttpServlet {
                         "</body>" +
                         "</html>"
         );
-
     }
-
 }

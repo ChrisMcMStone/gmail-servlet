@@ -45,7 +45,7 @@ public class AddContact extends HttpServlet {
 
                 RequestDispatcher dispatcher = request.getRequestDispatcher("Error"); //New Request Dispatcher
                 request.setAttribute("error", e.getMessage());
-                request.setAttribute("previous", "searchcontact");
+                request.setAttribute("previous", "addcontact.jsp");
                 dispatcher.forward(request, response);
             }
         }

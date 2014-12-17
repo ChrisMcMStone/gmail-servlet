@@ -43,7 +43,7 @@ public class SearchContact extends HttpServlet {
             } catch (SQLException e) {
                 RequestDispatcher dispatcher = request.getRequestDispatcher("Error"); //New Request Dispatcher
                 request.setAttribute("error", e.getMessage());
-                request.setAttribute("previous", "searchcontact");
+                request.setAttribute("previous", "contact.jsp");
                 dispatcher.forward(request, response);
             }
         }

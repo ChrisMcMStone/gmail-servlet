@@ -11,7 +11,7 @@
     </script>
 </head>
 <body>
-<a id="back" href="http://<%=request.getServerName()%>:<%=request.getServerPort()%>/email.html">Back</a>
+<a id="back" href="email.html">Back</a>
 <div class="logout-container">
     <form action="logout" method="post">
         <input id="logout" type="submit" value="Log Out"/>

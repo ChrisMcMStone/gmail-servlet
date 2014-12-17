@@ -12,7 +12,7 @@
     </script>
 </head>
 <body>
-<a id="back" href="http://<%=request.getServerName()%>:<%=request.getServerPort()%>/email.html">Back</a>
+<a id="back" href="email.html">Back</a>
 <div class="logout-container">
     <form action="logout" method="post">
         <input id="logout" type="submit" value="Log Out"/>
@@ -28,7 +28,7 @@
                     <b>Forename: </b>
                 </td>
                 <td>
-                    <input id="name" name="firstname" type="text" placeholder="...">
+                    <input id="name" name="firstname" type="text" placeholder="..." required>
                 </td>
             </tr>
             <tr>
@@ -44,7 +44,7 @@
                     <b>Email Address: </b>
                 </td>
                 <td>
-                    <input id="email" name="email" type="email" placeholder="...">
+                    <input id="email" name="email" type="email" placeholder="..." required>
                 </td>
             </tr>
             <tr>
